@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/Success.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/Admin.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/web/joinus.jsp</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/ClientServlet.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/util/RentalUtils.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/web/admin.jsp</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/web/rent.jsp</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/RentServlet.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/RentalServelet.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/bean/Car.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/util/UserUtils.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/util/CarUtils.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/web/inventory.jsp</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/util/ClientUtils.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/util/DateUtils.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/bean/Rental.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/AuthServlet.java</file>
+            <file>file:/Users/thiagoloschi/Desktop/Fall_CS3520_2/src/java/edu/csueb/cs3520/servlet/InventoryServlet.java</file>
+        </group>
+    </open-files>
+</project-private>

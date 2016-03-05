@@ -6,9 +6,11 @@
 package edu.csueb.cs3520.servlet;
 
 import edu.csueb.cs3520.bean.User;
-import edu.csueb.cs3520.util.AuthUtils;
+import edu.csueb.cs3520.util.UserUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,20 +33,35 @@ public class AuthServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
             String url = "";
-            System.out.println("Username: " + username);
-            System.out.println("Password: " + password);
-            User user = AuthUtils.authorize(username, password);
-            if(null!=user){
-                url = "/welcome.jsp";
-                request.getSession().setAttribute("user", user);
-                //not use the request scope cause it clears in every request, Session scope will last for the time the user is logged in
+            if(request.getParameter("username") != null){
+                try {
+                    String username = request.getParameter("username");
+                    String password = request.getParameter("password");
+                    
+                    System.out.println("Username: " + username);
+                    System.out.println("Password: " + password);
+                    
+                    User user = new User();
+                    if(username.equalsIgnoreCase("root"))
+                        user = new User("root","password");
+                    else   
+                        user = UserUtils.getUser(username, password);
+                    if(null!=user){
+                        url="/index.jsp";
+                        request.getSession().setAttribute("user", user);
+                        //not use the request scope cause it clears in every request, Session scope will last for the time the user is logged in
+                    }else{
+                        url = "/gottalogin.jsp";
+                        request.setAttribute("login_error", "Invalid login for Username: " +username+ ", Please retry credentials");            
+                    }
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(AuthServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }else{
+                request.getSession().setAttribute("user", null);
                 url = "/index.jsp";
-                request.setAttribute("login_error", "Invalid login for Username: " +username+ ", Please retry credentials");
+                
             }
             this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }

@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="include/style/bootstrap.css">
         <link rel="stylesheet" href="include/style/bootstrap-theme.css">
-        <link rel="stylesheet" href="include/style/cs3520.css">
+        <link rel="stylesheet" href="include/style/style.css">
 
         <script src="include/js/jquery-2.1.4.js"></script>
         <script src="include/js/bootstrap.js"></script>

@@ -16,11 +16,29 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Monique
- */
 public class UserUtils {
+    
+    
+    private static ArrayList<User> users = new ArrayList();
+
+    public UserUtils() {
+        users.add(new User("root","password"));
+    }
+    
+    public boolean addClient(User user){
+        users.add(user);
+        return true;
+    }
+    
+    public User getClient(String username, String password){
+        for (User user : users) {
+            if(user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password))
+                return user;
+        }
+        return null;
+    }
+    
+
     
     public static void updateUser(User user, String email){
         Statement stmt = null;
@@ -28,8 +46,8 @@ public class UserUtils {
         try {
         Class.forName("com.mysql.jdbc.Driver");            
         String dbURL = "jdbc:mysql://localhost:3306/cs3520";
-            String username = "cs3520";
-            String password = "admin";
+            String username = "root";
+            String password = "teste";
            connection = DriverManager.getConnection(
                     dbURL, username, password);
            stmt = connection.createStatement();
@@ -48,22 +66,23 @@ public class UserUtils {
     }
        
     }
-     public static User getUser(String email) throws ClassNotFoundException {
+    
+public static User getUser(String unme, String pass) throws ClassNotFoundException {
 
         Statement stmt = null;
         ResultSet rs = null;
         Connection connection = null;
         User user = null;
         try {
-Class.forName("com.mysql.jdbc.Driver");            
-String dbURL = "jdbc:mysql://localhost:3306/cs3520";
-            String username = "cs3520";
-            String password = "admin";
+        Class.forName("com.mysql.jdbc.Driver");            
+        String dbURL = "jdbc:mysql://localhost:3306/cs3520";
+            String username = "root";
+            String password = "teste";
            connection = DriverManager.getConnection(
                     dbURL, username, password);
            
             stmt = connection.createStatement();
-            rs = stmt.executeQuery("select * from user where email= '"+email+"'");
+            rs = stmt.executeQuery("select * from user where username= '"+unme+"'");
             while(rs.next()){
                 String uname = rs.getString("username");
                 String pswrd= rs.getString("password");
@@ -71,8 +90,12 @@ String dbURL = "jdbc:mysql://localhost:3306/cs3520";
                 user= new User();
                 user.setUsername(uname);
                 user.setPassword(pswrd);
-                user.setEmail(email);
+              
             }
+            
+
+            if(user.getPassword().equals(pass))
+                return user;
            
            
         } catch (SQLException e) {
@@ -88,7 +111,7 @@ String dbURL = "jdbc:mysql://localhost:3306/cs3520";
                 Logger.getLogger(UserUtils.class.getName()).log(Level.SEVERE, null, ex);
             }
            
-}     return user;
+}     return null;
     }
     
     
@@ -98,12 +121,12 @@ String dbURL = "jdbc:mysql://localhost:3306/cs3520";
         try {
         Class.forName("com.mysql.jdbc.Driver");            
         String dbURL = "jdbc:mysql://localhost:3306/cs3520";
-            String username = "cs3520";
-            String password = "admin";
+            String username = "root";
+            String password = "teste";
            connection = DriverManager.getConnection(
                     dbURL, username, password);
            stmt = connection.createStatement();
-           String query ="Insert into user (username,password,email) values('"+user.getUsername()+"','"+user.getPassword()+"','"+user.getEmail()+"')";
+           String query ="Insert into user (username,password) values('"+user.getUsername()+"','"+user.getPassword()+"')";
            stmt.executeUpdate(query);
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,7 +142,7 @@ String dbURL = "jdbc:mysql://localhost:3306/cs3520";
        
     }
     
-    public static boolean removeUserByEmail(String email){
+    public static boolean removeUserByEmail(String uname){
         Statement stmt = null;
         ResultSet rs = null;
         Connection connection = null;
@@ -127,12 +150,12 @@ String dbURL = "jdbc:mysql://localhost:3306/cs3520";
         try {
         Class.forName("com.mysql.jdbc.Driver");            
         String dbURL = "jdbc:mysql://localhost:3306/cs3520";
-            String username = "cs3520";
-            String password = "admin";
+            String username = "root";
+            String password = "teste";
            connection = DriverManager.getConnection(
                     dbURL, username, password);
            stmt = connection.createStatement();
-           count = stmt.executeUpdate("Delete from user where email='"+email+"'");
+           count = stmt.executeUpdate("Delete from user where username='"+uname+"'");
            
         } catch (Exception e) {
             e.printStackTrace();
@@ -153,8 +176,8 @@ String dbURL = "jdbc:mysql://localhost:3306/cs3520";
         ResultSet rs = null;
         Connection connection = null;
         try {
-Class.forName("com.mysql.jdbc.Driver");            
-String dbURL = "jdbc:mysql://localhost:3306/cs3520";
+        Class.forName("com.mysql.jdbc.Driver");            
+        String dbURL = "jdbc:mysql://localhost:3306/cs3520";
             String username = "cs3520";
             String password = "admin";
            connection = DriverManager.getConnection(

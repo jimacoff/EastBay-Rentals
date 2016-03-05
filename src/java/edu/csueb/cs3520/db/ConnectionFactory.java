@@ -5,10 +5,6 @@
  */
 package edu.csueb.cs3520.db;
 
-/**
- *
- * @author Monique
- */
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -24,7 +20,7 @@ public class ConnectionFactory {
         try {
 
          Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost/cs3520", "cs3520", "admin");
+            return DriverManager.getConnection("jdbc:mysql://localhost/cs3520", "bob", "test");
 
         } catch (SQLException e) {
 
