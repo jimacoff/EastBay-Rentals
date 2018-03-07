@@ -6,7 +6,7 @@
 4. [Screenshots](#screenshots)
 
 ### Description
-This is a rental car project developed for a Computer Science class, at California State University East Bay, back in 2015. Users were able to choose a car based on a category, and then choose an available timeline for booking. The last page was the checkout page, where they input a credit card number.
+This is a rental car project developed for a Computer Science class, at California State University East Bay, back in 2015. Users were able to choose a car based on a category, and then choose an available timeline for booking. The last page was the checkout page, where they can input the credit card number.
 <br /> 
 
 ### Technologies
