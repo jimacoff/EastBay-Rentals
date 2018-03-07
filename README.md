@@ -1,4 +1,4 @@
-# CarRental
+# EastBayRentals
 
 1. [Description](#description)
 2. [Technologies](#technologies)
